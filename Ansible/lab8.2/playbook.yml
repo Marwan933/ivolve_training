@@ -1,0 +1,23 @@
+---
+- name: Install and configure NGINX
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Ensure NGINX is installed
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Create custom index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: "Hello World From marwan !"
+
+    - name: Ensure NGINX is started and enabled on boot
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+

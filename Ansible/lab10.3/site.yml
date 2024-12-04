@@ -1,0 +1,11 @@
+---
+- name: Deploy Jenkins, Docker, and OpenShift CLI
+  hosts: aws
+  become: yes
+  roles:
+    - jenkins 
+    - oc
+    - docker  
+    
+  
+

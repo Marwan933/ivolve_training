@@ -1,0 +1,9 @@
+---
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1  # Add your target AWS region
+filters:
+  "tag:Name": aws # Filter EC2 instances based on tags
+keyed_groups:
+  - key: tags.Name
+    prefix: tag
