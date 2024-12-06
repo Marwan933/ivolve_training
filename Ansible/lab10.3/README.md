@@ -57,7 +57,8 @@ vim site.yml
 
 ```
 
-![lab10 site yml](https://github.com/user-attachments/assets/2411766b-9fd8-4a37-b502-05616a743de0)
+![image](https://github.com/user-attachments/assets/46a3f159-4209-417e-a4c4-570dcae27f53)
+
 
 ### Step 7: Run the playbook 
 ```
