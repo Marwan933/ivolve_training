@@ -31,7 +31,7 @@
 
  1. **Create an Inventory File:**
  ```bash
-    mkdir ~/ansible
+    mkdir lab7
     vim inventory
 ```
 <img width="960" alt="lab7 1day3inventory" src="https://github.com/user-attachments/assets/8c94c420-428e-47e9-9205-573fa385a60e">
@@ -40,7 +40,7 @@
 
  1- **Ping the Managed Hosts:**
  ```bash 
- ansible -i ~/ansible/inventory server -m ping
+ ansible -i inventory all -m ping
  ```
 <img width="949" alt="lab7,2ping" src="https://github.com/user-attachments/assets/bbc09f31-6b86-407e-8bc4-8f8b883abfff">
 
@@ -48,15 +48,15 @@
 
 1. **Check Disk Usage:**
    ```bash
-   ansible -i ~/ansible/inventory server -a "df -h"
+   ansible -i inventory all -a "df -h"
 
 2. **Check Free Memory:**
     ```bash
-    ansible -i ~/ansible/inventory server -a "free -m"  
+    ansible -i inventory all -a "free -m"  
 
 3. **Check Uptime:**
    ```bash
-   ansible -i ~/ansible/inventory server -a "uptime"
+   ansible -i inventory all -a "uptime"
    ```
    <img width="960" alt="lab7day3" src="https://github.com/user-attachments/assets/655f6cf5-0f5f-438d-846a-328618563aa0">
 
