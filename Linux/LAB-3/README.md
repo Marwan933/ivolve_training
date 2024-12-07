@@ -29,4 +29,4 @@ The output is
 <img width="960" alt="lab3 2historyday2" src="https://github.com/user-attachments/assets/19d77109-0396-4975-93ce-c54985c3433d">
 
 
-### Done ..
+### Done ...
