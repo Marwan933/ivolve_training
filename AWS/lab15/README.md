@@ -96,7 +96,7 @@ aws s3 cp bucket_policy.json s3://ivolve-marwanhesham-bucket/bucket_policy.json
 
 **Download a File:**
 ```bash
-aws s3 cp s3://ivolve-marzouk-bucket/policy.json policy1.json
+aws s3 cp s3://ivolve-marwanhesham-bucket/policy.json policy1.json
 ```
 
 #### step 8: List Files in the Bucket
