@@ -21,39 +21,35 @@
 
 <img width="321" alt="lab17 priv" src="https://github.com/user-attachments/assets/e2886056-9269-49a5-8f60-40e8d017678d">
 
-#### 5- Security Group for EC2:
-
-<img width="380" alt="lab17 sg" src="https://github.com/user-attachments/assets/a793f736-9bed-4e42-a8dd-344bb1c928d3">
-
-#### 6- Security Group for RDS:
+#### 5- Security Group for RDS:
 
 <img width="379" alt="lab17sggggrds" src="https://github.com/user-attachments/assets/82b0dcdf-c072-440a-8d1b-958a183eab39">
 
-#### 7- Create EC2 Instance:
+#### 6- Create EC2 Instance:
 
 <img width="446" alt="lab17 ec22" src="https://github.com/user-attachments/assets/08e90cbd-48b7-457a-85a0-a1823df8d0bd">
 
-#### 8- Local provisioner to write EC2 IP:
+#### 7- Local provisioner to write EC2 IP:
 
 <img width="327" alt="lab17 prov," src="https://github.com/user-attachments/assets/362a2a61-898e-438a-90d9-3ccba8f4e90d">
 
-#### 9- Create RDS Instance:
+#### 8- Create RDS Instance:
 
 <img width="543" alt="lab17 awsdb" src="https://github.com/user-attachments/assets/10a2c2e4-d090-4135-a987-2afb48f2221b">
 
-#### 10-  Create DB Subnet Group:
+#### 9-  Create DB Subnet Group:
 
 <img width="380" alt="dbsubnet" src="https://github.com/user-attachments/assets/efe60e62-7517-49a5-a2e9-c9a120a0ce4e">
 
-#### 11- Create Internet Gateway:
+#### 10- Create Internet Gateway:
 
 <img width="438" alt="igw" src="https://github.com/user-attachments/assets/c896d0d4-c9f9-42ce-b61d-52660e08269f">
 
-#### 12- Create Route Table:
+#### 11- Create Route Table:
 
 <img width="401" alt="rttt" src="https://github.com/user-attachments/assets/bda53e3d-d3ea-49c9-9bac-1cab48976134">
 
-#### 13- Associate Route Table:
+#### 12- Associate Route Table:
 
 <img width="349" alt="asso" src="https://github.com/user-attachments/assets/7b08ac5a-6d19-49c4-bd47-c26e1d65dceb">
 
