@@ -1,5 +1,5 @@
 # Description
-## This project contains Terraform configuration files to provision a multi-tier infrastructure on AWS. The infrastructure comprises an EC2 instance, a Virtual Private Cloud (VPC) with both public and private subnets, and an Amazon Relational Database Service (RDS) instance.
+## Multi-Tier Application Deployment with Terraform
 
 ### Step 1: Create main.tf file
 
