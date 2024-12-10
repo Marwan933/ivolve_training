@@ -144,60 +144,44 @@ resource "aws_security_group" "web" {
 
 # EC2 Instances
 resource "aws_instance" "nginx" {
-  ami           = ami-0e2c8caa4b6378d8c
+  ami           = "ami-0e2c8caa4b6378d8c"
   instance_type = var.instance_type
   subnet_id     = aws_subnet.public.id
   key_name      = var.key_name
 
   vpc_security_group_ids = [aws_security_group.web.id]
 
+  user_data = <<-EOF
+              #!/bin/bash
+              apt-get update
+              apt-get install -y nginx
+              systemctl start nginx
+              systemctl enable nginx
+              EOF
+
   tags = {
     Name = "${var.environment}-nginx"
   }
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update",
-      "sudo apt-get install -y nginx",
-      "sudo systemctl start nginx",
-      "sudo systemctl enable nginx"
-    ]
-
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = file("${var.key_name}.pem")
-      host        = self.public_ip
-    }
-  }
 }
 
+
 resource "aws_instance" "apache" {
-  ami           = data.aws_ami.ubuntu.id
+  ami           = var.ami_id
   instance_type = var.instance_type
   subnet_id     = aws_subnet.private.id
   key_name      = var.key_name
 
   vpc_security_group_ids = [aws_security_group.web.id]
 
+  user_data = <<-EOF
+              #!/bin/bash
+              apt-get update
+              apt-get install -y apache2
+              systemctl start apache2
+              systemctl enable apache2
+              EOF
+
   tags = {
     Name = "${var.environment}-apache"
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update",
-      "sudo apt-get install -y apache2",
-      "sudo systemctl start apache2",
-      "sudo systemctl enable apache2"
-    ]
-
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = file("${var.key_name}.pem")
-      host        = self.private_ip
-      bastion_host = aws_instance.nginx.public_ip
-    }
   }
 }
