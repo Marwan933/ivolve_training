@@ -5,4 +5,5 @@ private_subnet_cidr = "10.0.2.0/24"
 instance_type       = "t2.micro"
 key_name            = "lab13-aws.key"
 environment         = "dev"
+ami_id              = "ami-0e2c8caa4b6378d8c"
 
