@@ -1,0 +1,21 @@
+# static-website-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: static-website
+  template:
+    metadata:
+      labels:
+        app: static-website
+    spec:
+      containers:
+      - name: nginx
+        image: docker.io/marwanhesham463/static-website # Your custom image name
+        ports:
+        - containerPort: 80
+

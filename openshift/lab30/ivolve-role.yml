@@ -1,0 +1,10 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default     # Replace with the target namespace
+  name: ivolve-marwan
+rules:
+  - apiGroups: [""]      # "" indicates the core API group
+    resources: ["pods"]  # Specify pods as the resource
+    verbs: ["get", "list", "watch"]  # Read-only access
+

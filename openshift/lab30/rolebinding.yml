@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: ivolve-binding
+  namespace: default  # Replace with your namespace
+subjects:
+  - kind: ServiceAccount
+    name: ivolve-marwan
+    namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: ivolve-role
+
