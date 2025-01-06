@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve'
+        DOCKER_IMAGE = 'docker.io/marwanhesham463/ivolve'
         KUBE_NAMESPACE = 'default'
         DEPLOYMENT_YAML = 'deployment.yaml'
     }
@@ -10,8 +10,8 @@ pipeline {
             steps {
                 script {
                     git url: 'https://github.com/IbrahimAdell/Lab.git', branch: 'main'
-                    dir('jenkins/lab1') {
-                        git url: 'https://github.com/wolf8534/ivolve-.git', branch: 'main'
+                    dir('jenkins/LAB-23') {
+                        git url: 'https://github.com/Marwan933/ivolve_training.git', branch: 'main'
                     }
                 }
             }
@@ -67,7 +67,7 @@ pipeline {
 
     post {
         success {
-            echo "Pipeline executed successfully."
+            echo "Pipeline executed successfully...!"
         }
         failure {
             echo "Pipeline failed."
