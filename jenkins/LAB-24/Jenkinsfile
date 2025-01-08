@@ -7,7 +7,7 @@ pipeline {
         DOCKER_IMAGE = 'docker.io/marwanhesham463/ivolve'
         KUBE_NAMESPACE = 'default'
         DEPLOYMENT_YAML = 'deployment.yaml' 
-'
+
     }
     stages {
         stage('Checkout') {
