@@ -1,4 +1,6 @@
 def checkoutRepository(String repoUrl, String branch) {
-    checkout scm: [$class: 'GitSCM', branches: [[name: branch]], userRemoteConfigs: [[url: repoUrl]]]
+    checkout([$class: 'GitSCM', branches: [[name: "*/${branch}"]],
+             userRemoteConfigs: [[url: repoUrl]]])
 }
+
 
