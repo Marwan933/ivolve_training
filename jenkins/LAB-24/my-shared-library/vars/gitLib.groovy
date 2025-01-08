@@ -1,9 +1,4 @@
-def checkoutRepository(String repoUrl, String branch = 'main', String subDir = '') {
-    if (subDir) {
-        dir(subDir) {
-            git url: repoUrl, branch: branch
-        }
-    } else {
-        git url: repoUrl, branch: branch
-    }
+def checkoutRepository(String repoUrl, String branch) {
+    checkout scm: [$class: 'GitSCM', branches: [[name: branch]], userRemoteConfigs: [[url: repoUrl]]]
 }
+
