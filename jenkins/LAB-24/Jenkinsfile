@@ -6,20 +6,13 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'docker.io/marwanhesham463/ivolve'
         KUBE_NAMESPACE = 'default'
-        DEPLOYMENT_YAML = 'jenkins/LAB-24/deployment.yaml' 
-
+        DEPLOYMENT_YAML = 'deployment.yaml'
     }
     stages {
         stage('Checkout') {
             steps {
                 script {
-                    
                     gitLib.checkoutRepository('https://github.com/IbrahimAdell/Lab.git', 'main')
-
-                    dir('jenkins/LAB-24/my-shared-library/vars') {
-                      
-                        gitLib.checkoutRepository('https://github.com/Marwan933/ivolve_training.git', 'main')
-                    }
                 }
             }
         }
@@ -40,17 +33,14 @@ pipeline {
             }
         }
 
-     stage('Edit Deployment.yaml') {
-    steps {
-        script {
-            sh 'ls -la jenkins/LAB-24/'
-            sh 'sed -i "s|image:.*|image: docker.io/marwanhesham463/ivolve|g" jenkins/LAB-24/deployment.yaml'
+        stage('Edit Deployment.yaml') {
+            steps {
+                script {
+                    sh 'ls -la'
+                    sh 'sed -i "s|image:.*|image: ${DOCKER_IMAGE}|g" deployment.yaml'
+                }
+            }
         }
-    }
-}
-
-
-
 
         stage('Deploy to Kubernetes') {
             steps {
