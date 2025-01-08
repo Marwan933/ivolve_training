@@ -39,13 +39,15 @@ pipeline {
             }
         }
 
-        stage('Edit Deployment.yaml') {
-            steps {
-                script {
-                    deploymentLib.editDeploymentYaml(env.DEPLOYMENT_YAML, env.DOCKER_IMAGE)
-                }
-            }
+       stage('Edit Deployment.yaml') {
+    steps {
+        script {
+            sh 'ls -la' 
+            sh 'sed -i "s|image:.*|image: docker.io/marwanhesham463/ivolve|g" jenkins/LAB-24/deployment.yaml'
         }
+    }
+}
+
 
         stage('Deploy to Kubernetes') {
             steps {
