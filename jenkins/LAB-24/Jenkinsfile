@@ -6,7 +6,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'docker.io/marwanhesham463/ivolve'
         KUBE_NAMESPACE = 'default'
-        DEPLOYMENT_YAML = 'deployment.yaml' 
+        DEPLOYMENT_YAML = 'jenkins/LAB-24/deployment.yaml' 
 
     }
     stages {
