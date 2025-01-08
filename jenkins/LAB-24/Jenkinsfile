@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     git url: 'https://github.com/IbrahimAdell/Lab.git', branch: 'main'
-                    dir('jenkins/LAB-24/my-shared-library /vars') {
+                    dir('jenkins/LAB-24/my-shared-library/vars') {
                         git url: 'https://github.com/Marwan933/ivolve_training.git', branch: 'main'
                     }
                 }
