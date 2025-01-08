@@ -12,7 +12,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
+                    
                     gitLib.checkoutRepository('https://github.com/IbrahimAdell/Lab.git', 'main')
+
+                    dir('jenkins/lab2/shared-library-name/vars') {
+                      
+                        gitLib.checkoutRepository('https://github.com/Marwan933/ivolve_training.git', 'main')
+                    }
                 }
             }
         }
@@ -36,8 +42,7 @@ pipeline {
         stage('Edit Deployment.yaml') {
             steps {
                 script {
-                    sh 'ls -la'
-                    sh 'sed -i "s|image:.*|image: ${DOCKER_IMAGE}|g" deployment.yaml'
+                    deploymentLib.editDeploymentYaml(env.DEPLOYMENT_YAML, env.DOCKER_IMAGE)
                 }
             }
         }
@@ -61,7 +66,7 @@ pipeline {
 
     post {
         success {
-            echo "Pipeline executed successfully."
+            echo "Pipeline executed successfully..."
         }
         failure {
             echo "Pipeline failed."
