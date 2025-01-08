@@ -1,4 +1,3 @@
-dir('jenkins/LAB-24/my-shared-library/vars')
 @Library('my-shared-library') _
 
 pipeline {
