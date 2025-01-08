@@ -15,7 +15,7 @@ pipeline {
                     
                     gitLib.checkoutRepository('https://github.com/IbrahimAdell/Lab.git', 'main')
 
-                    dir('jenkins/lab2/shared-library-name/vars') {
+                    dir('jenkins/LAB-24/my-shared-library/vars') {
                       
                         gitLib.checkoutRepository('https://github.com/Marwan933/ivolve_training.git', 'main')
                     }
