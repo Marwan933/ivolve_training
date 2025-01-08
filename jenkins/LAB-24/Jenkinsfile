@@ -43,12 +43,14 @@ pipeline {
       stage('Edit Deployment.yaml') {
     steps {
         script {
-           
-            sh 'ls -la' 
-            sh 'sed -i s|image:.*|image: docker.io/marwanhesham463/ivolve|g jenkins/LAB-24/deployment.yaml'
+            
+            sh 'ls -la jenkins/LAB-24/'
+            
+            sh 'sed -i "s|image:.*|image: docker.io/marwanhesham463/ivolve|g" jenkins/LAB-24/deployment.yaml'
         }
     }
 }
+
 
 
         stage('Deploy to Kubernetes') {
