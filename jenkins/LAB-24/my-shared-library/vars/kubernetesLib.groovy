@@ -1,5 +1,6 @@
-def deployToKubernetes(String kubeConfigPath, String token, String yamlFile, String namespace) {
+def deployToKubernetes(String kubeConfigPath, String kubeToken, String deploymentYaml, String namespace) {
     sh """
-    kubectl --kubeconfig=${kubeConfigPath} --token=${token} apply -f ${yamlFile} -n ${namespace}
+    export KUBECONFIG=${kubeConfigPath}
+    kubectl --token=${kubeToken} apply -f ${deploymentYaml} -n ${namespace}
     """
 }
